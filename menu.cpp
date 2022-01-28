@@ -113,7 +113,7 @@ void menuAusgabeStart () {
          << " [1] Neue Bilddatei erzeugen \n"
          << " [2] Bilddatei direkt bearbeiten \n"
          << " [3] Bilddatei kopieren \n"
-         << " [4] Bilddatei löschen \n"
+         << " [4] Bilddatei entfernen \n"
          << " [0] Beenden \n"
          << " \n"
          << " (?) Was möchten Sie tun?"

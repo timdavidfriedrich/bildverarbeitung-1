@@ -95,15 +95,17 @@ void bildEntfernen () {
 
 /**
  * @brief Abfrage zur Linienzeichnung.
- * Fragt nach Linien-Koordinaten und Linien-Grauwert. Führt Zeichnung aus.
- * Wenn erfolgreich (nicht diagonal), dann Ausgabe des Bildes mit Änderung.
- * Ansonsten erneute Abfrage.
+ * Fragt nach Linien-Koordinaten und Linien-Grauwert.
+ * Wenn Koordinaten im Bild und Grauwert gültig, dann Zeichnung.
+ * Ist Zeichnung fehlgeschlagen (weil z.B. diagonal), dann erneute Abfrage.
+ * Gibt anschließend geändertes Bild aus und speichert in Datei.
  */
 void bildZeichneLinie () {
     int vonX, vonY, nachX, nachY;
     int intGrauwert;
     unsigned char grauwert;
 
+    // TODO: if (cin)
     cout << "\n (?) Von welchem Punkt aus soll die Linie beginnen (Format: \"X Y\", Beispiel: \"0 4\")? \n >> ";
     cin >> vonX >> vonY;
     cout << "\n (?) An welchem Punkt soll die Linie enden (Format: \"X Y\", Beispiel: \"6 4\")? \n >> ";
@@ -134,7 +136,8 @@ void bildZeichneLinie () {
 
 /**
  * @brief Abfrage zur Rechteckzeichnung.
- * Fragt nach Rechteck-Koordinaten und Rechteck-Grauwert. Führt Zeichnung aus.
+ * Fragt nach Rechteck-Koordinaten und Rechteck-Grauwert.
+ * Wenn Koordinaten im Bild und Grauwert gültig, dann Zeichnung.
  * Gibt anschließend geändertes Bild aus und speichert in Datei.
  */
 void bildZeichneRechteck () {
@@ -142,6 +145,7 @@ void bildZeichneRechteck () {
     int intGrauwert;
     unsigned char grauwert;
 
+    // TODO: if (cin)
     cout << "\n (?) An welchem Punkt soll sich die erste Ecke des Rechtecks befinden (Format: \"X Y\", Beispiel: \"3 1\")? \n >> ";
     cin >> vonX >> vonY;
     cout << "\n (?) An welchem Punkt soll sich die entgegengesetze Ecke befinden (Format: \"X Y\", Beispiel: \"6 10\")? \n >> ";
@@ -150,7 +154,7 @@ void bildZeichneRechteck () {
     cin >> intGrauwert;
 
     if (vonX < bild.anzahlSpalten && vonY < bild.anzahlZeilen && nachX < bild.anzahlSpalten && nachY < bild.anzahlZeilen) {
-        if (grauwert >= 0 && grauwert <= bild.maxGrauwert) {
+        if (intGrauwert >= 0 && intGrauwert <= (int) bild.maxGrauwert) {
             grauwert = intGrauwert;
             bild.zeichneRechteck (vonX, vonY, nachX, nachY, grauwert);
             cout << "\n\n" << bild;
