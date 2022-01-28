@@ -1,0 +1,2 @@
+g++ main.cpp menu.cpp Bild.cpp bearbeitung.cpp -std=c++17 -Wall -o PGM
+./PGM
