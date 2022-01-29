@@ -1,4 +1,16 @@
+###########################################################
+
+ TEST-DURCHLAUF
  
+ Überprüfung von Korrektheit und Robustheit des Programms
+ durch Eingabe gültiger und fehlerhafter Werte.
+ 
+ ">>"-Symbole kündigen Benutzereingaben an.
+ 
+###########################################################
+
+
+
 
  -- PGM-BILDVERARBEITUNG -- 
  
@@ -20,7 +32,7 @@
 
  (?) Wie viele Pixel hoch soll das Bild sein? 
  >>  dgfe
- 
+
 
  (!) Bitte geben Sie ganze Zahlen für die Maße ein.
 
@@ -33,6 +45,7 @@
  (?) Wie viele Pixel hoch soll das Bild sein? 
  >>  65
 
+
  (!) Das Bild darf maximal 70 Pixel breit sein! 
 
  (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? 
@@ -43,6 +56,7 @@
 
  (?) Wie viele Pixel hoch soll das Bild sein? 
  >>  23
+
 
  (!) Das Bild muss mindestens 1 x 1 Pixel groß sein! 
 
@@ -277,6 +291,7 @@ P2
  (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
  >>  1
  
+ 
  (!) Linien dürfen nicht diagonal gezogen werden!
 
  (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
@@ -386,6 +401,8 @@ P2
 
  (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
  >>   
+ 
+ 
  (!) Falsches Format!
 
  (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
@@ -397,6 +414,7 @@ P2
  (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
  >>  43
  
+ 
  (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!
 
  (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
@@ -407,6 +425,7 @@ P2
 
  (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
  >>  1337
+ 
  
  (!) Der Grauwert darf maximal 255 betragen!
 
@@ -420,6 +439,7 @@ P2
 
  (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
  >>  32
+ 
  
  (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!
 
@@ -501,4 +521,5 @@ P2
 
 
  (:) Programm beendet. Erneut abrufbar mit "./PGM". 
+
 

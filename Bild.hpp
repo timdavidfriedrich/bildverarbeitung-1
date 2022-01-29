@@ -18,6 +18,8 @@ using namespace std;
  * @param name Dateiname, der u.a. zum Speichern verwendet wird
  * @param maxSpalten Maximale Bildbreite (Empfehlung .pgm-Dokumentation)
  * @param maxGrauwert Max. Grauwert einzelner Pixel bzw. max. unsigned-char-Kapazität
+ * 
+ * EXPLIZIT GEFORDERT (zumindest Klasse mit Matrix, Operatoren und Zeichnen-Funktionen)
  */
 class Bild {
 

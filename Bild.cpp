@@ -10,6 +10,8 @@ using namespace std;
  * @param dateiname Name der zu erstellenden Datei (exkl. ".pgm")
  * @param anzahlSpalten Breite des Bildes bzw. Anzahl unsigned chars in Zeilen-Vektoren
  * @param anzahlZeilen Höhe des Bukdes bzw. Anzahl Zeilen-Vektoren in Matrix-Vektor
+ * 
+ * NICHT EXPLIZIT GEFORDERT
  */
 void Bild::erstellen (string dateiname, int anzahlSpalten, int anzahlZeilen) {
     Bild::anzahlSpalten = anzahlSpalten;
@@ -26,6 +28,8 @@ void Bild::erstellen (string dateiname, int anzahlSpalten, int anzahlZeilen) {
  * @param dateiname Name der gewählten Datei (exkl. ".pgm")
  * @return true, wenn erfolgreich
  * @return false, wenn Datei nicht gefunden
+ * 
+ * IMPLIZIT GEFORDERT
  */
 bool Bild::laden (string dateiname) {
     ifstream datei (dateiname + ".pgm");
@@ -45,6 +49,8 @@ bool Bild::laden (string dateiname) {
  * Öffnet vorhandene/neue Datei und lädt Bilddaten hinein.
  * 
  * @param dateiname Name der gewählten Datei (exkl. ".pgm")
+ * 
+ * IMPLIZIT GEFORDERT
  */
 void Bild::speichern (string dateiname) {
     Bild::name = dateiname;
@@ -69,6 +75,8 @@ void Bild::speichern (string dateiname) {
  * @param grauwert Grauwert, den Linie annehmen soll
  * @return true, wenn Zeichnung möglich (X oder Y gleich)
  * @return false, wenn diagonal
+ * 
+ * EXPLIZIT GEFORDERT
  */
 bool Bild::zeichneLinie (int vonX, int vonY, int nachX, int nachY, unsigned char grauwert) {
     if (vonX == nachX) {
@@ -103,6 +111,8 @@ bool Bild::zeichneLinie (int vonX, int vonY, int nachX, int nachY, unsigned char
  * @param nachX X-Koordinate der gegenüberliegenden Ecke
  * @param nachY Y-Koordinate der gegenüberliegenden Ecke
  * @param grauwert Grauwert, den Rechteck-Rand annehmen soll
+ * 
+ * EXPLIZIT GEFORDERT (abgesehen von "unsigned char grauwert")
  */
 void Bild::zeichneRechteck (int vonX, int vonY, int nachX, int nachY, unsigned char grauwert) {
     if (vonX <= nachX) {
@@ -139,6 +149,8 @@ void Bild::zeichneRechteck (int vonX, int vonY, int nachX, int nachY, unsigned c
  * @param stream Input-Stream (i.d.R. Datei)
  * @param bild Bildinstanz, die Bilddaten aufnehmen soll
  * @return ifstream& Gibt Stream an Vorgang zurück
+ * 
+ * EXPLIZIT GEFORDERT
  */
 ifstream &operator >> (ifstream &stream, Bild &bild) {
     bild.matrix.clear ();
@@ -179,6 +191,8 @@ ifstream &operator >> (ifstream &stream, Bild &bild) {
  * @param stream Output-Stream (i.d.R. für Datei oder cout)
  * @param bild Bildinstanz, deren Daten gespeichert werden sollen
  * @return ostream& Gibt Stream an Vorgang zurück
+ * 
+ * EXPLIZIT GEFORDERT
  */
 ostream &operator << (ostream &stream, const Bild &bild) {
     stream << "P2" << endl;

@@ -6,6 +6,8 @@ using namespace std;
 /**
  * @brief Startet Menü-Abfolge.
  * Gibt den Programmtitel aus, ruft Startmenü zum ersten Mal auf und fragt nach erster Eingabe.
+ * 
+ * NICHT EXPLIZIT GEFORDERT
  */
 void menu () {
     cout << " \n\n"
@@ -22,6 +24,8 @@ void menu () {
  * 
  * Wenn input ganze Zahl (int), dann weiter mit menuAuswahl ().
  * Ansonsten Fehlermeldung, Fehlerstatus zurücksetzen, Input leeren, und erneute Abfrage.
+ * 
+ * NICHT EXPLIZIT GEFORDERT
  */
 void menuEingabe () {
     int input;
@@ -56,6 +60,8 @@ void menuEingabe () {
  *   CASE: [5] Startet zeichneLinie () und kehrt zum Zeichnen-Menü zurück.
  *   CASE: [6] Startet zeichneRechteck () und kehrt zum Zeichnen-Menü zurück.
  *   CASE: [7] Speichert offene Datei ab und kehrt zum Startmenü zurück. 
+ * 
+ * NICHT EXPLIZIT GEFORDERT
  */
 void menuAuswahl (int input) {
     switch (input) {
@@ -113,6 +119,8 @@ void menuAuswahl (int input) {
 /**
  * @brief Gibt Startmenü aus.
  * Gibt Menü aus mit Optionen, um Bild auszuwählen.
+ * 
+ * NICHT EXPLIZIT GEFORDERT
  */
 void menuAusgabeStart () {
     cout << " \n\n"
@@ -130,6 +138,8 @@ void menuAusgabeStart () {
 /**
  * @brief Gibt Zeichnen-Menü aus.
  * Gibt Menü aus mit Optionen, um auf Bild zu zeichnen.
+ * 
+ * NICHT EXPLIZIT GEFORDERT
  */
 void menuAusgabeZeichnen () {
     cout << " \n\n"
