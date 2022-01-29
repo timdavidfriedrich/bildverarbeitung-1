@@ -1,0 +1,504 @@
+ 
+
+ -- PGM-BILDVERARBEITUNG -- 
+ 
+
+ [1] Neue Bilddatei erzeugen 
+ [2] Bilddatei direkt bearbeiten 
+ [3] Bilddatei kopieren 
+ [4] Bilddatei entfernen 
+ [0] Beenden 
+ 
+ (?) Was möchten Sie tun?
+ >>  1
+
+ (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? 
+ >>  testDatei
+
+ (?) Wie viele Pixel breit soll das Bild sein (max. 70)? 
+ >>  12
+
+ (?) Wie viele Pixel hoch soll das Bild sein? 
+ >>  dgfe
+ 
+
+ (!) Bitte geben Sie ganze Zahlen für die Maße ein.
+
+ (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? 
+ >>  testDatei
+
+ (?) Wie viele Pixel breit soll das Bild sein (max. 70)? 
+ >>  123
+
+ (?) Wie viele Pixel hoch soll das Bild sein? 
+ >>  65
+
+ (!) Das Bild darf maximal 70 Pixel breit sein! 
+
+ (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? 
+ >>  testDatei
+
+ (?) Wie viele Pixel breit soll das Bild sein (max. 70)? 
+ >>  -12 
+
+ (?) Wie viele Pixel hoch soll das Bild sein? 
+ >>  23
+
+ (!) Das Bild muss mindestens 1 x 1 Pixel groß sein! 
+
+ (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? 
+ >>  testDatei
+
+ (?) Wie viele Pixel breit soll das Bild sein (max. 70)? 
+ >>  10
+
+ (?) Wie viele Pixel hoch soll das Bild sein? 
+ >>  11
+
+
+P2
+10 11
+255
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  6
+
+ (?) An welchem Punkt soll sich die erste Ecke des Rechtecks befinden (Format: "X Y", Beispiel: "3 1")? 
+ >>  0 1
+
+ (?) An welchem Punkt soll sich die entgegengesetze Ecke befinden (Format: "X Y", Beispiel: "6 10")? 
+ >>  9 10
+
+ (?) Welchen Grauwert soll der Rand des Rechtecks annehmen (0 bis 255)? 
+ >>  99
+
+
+P2
+10 11
+255
+0 0 0 0 0 0 0 0 0 0 
+99 99 99 99 99 99 99 99 99 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  7
+ 
+
+ [1] Neue Bilddatei erzeugen 
+ [2] Bilddatei direkt bearbeiten 
+ [3] Bilddatei kopieren 
+ [4] Bilddatei entfernen 
+ [0] Beenden 
+ 
+ (?) Was möchten Sie tun?
+ >>  dsae
+
+
+ (!) Bitte geben Sie eine ganze Zahl ein. 
+ (?) Was möchten Sie tun?
+ >>  -123
+
+ (!) Diese Zahl verweist auf keinen Menüpunkt! 
+ (?) Was möchten Sie tun?
+ >>  420
+
+ (!) Diese Zahl verweist auf keinen Menüpunkt! 
+ (?) Was möchten Sie tun?
+ >>  3
+
+ (?) Wie heißt die Originaldatei, die kopiert werden soll (ohne Endung)? 
+ >>  nichtExistenteDatei
+
+ (?) Welcher Name soll für die Kopie gewählt werden (ohne Endung)? 
+ >>  testKopie
+
+ (!) Die Datei "nichtExistenteDatei.pgm" existiert nicht! 
+ 
+
+ [1] Neue Bilddatei erzeugen 
+ [2] Bilddatei direkt bearbeiten 
+ [3] Bilddatei kopieren 
+ [4] Bilddatei entfernen 
+ [0] Beenden 
+ 
+ (?) Was möchten Sie tun?
+ >>  3
+
+ (?) Wie heißt die Originaldatei, die kopiert werden soll (ohne Endung)? 
+ >>  testDatei
+
+ (?) Welcher Name soll für die Kopie gewählt werden (ohne Endung)? 
+ >>  testKopie
+
+
+P2
+10 11
+255
+0 0 0 0 0 0 0 0 0 0 
+99 99 99 99 99 99 99 99 99 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  7
+ 
+
+ [1] Neue Bilddatei erzeugen 
+ [2] Bilddatei direkt bearbeiten 
+ [3] Bilddatei kopieren 
+ [4] Bilddatei entfernen 
+ [0] Beenden 
+ 
+ (?) Was möchten Sie tun?
+ >>  4
+
+ (?) Wie heißt die Datei, die gelöscht werden soll (ohne Endung)? 
+ >>  testKopie
+
+ (:) Die Datei "testKopie.pgm" wurde gelöscht.
+ 
+
+ [1] Neue Bilddatei erzeugen 
+ [2] Bilddatei direkt bearbeiten 
+ [3] Bilddatei kopieren 
+ [4] Bilddatei entfernen 
+ [0] Beenden 
+ 
+ (?) Was möchten Sie tun?
+ >>  2
+
+ (?) Wie heißt die Datei, die bearbeitet werden soll (ohne Endung)? 
+ >>  testDatei
+
+
+P2
+10 11
+255
+0 0 0 0 0 0 0 0 0 0 
+99 99 99 99 99 99 99 99 99 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 0 0 0 0 0 0 0 0 99 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  6
+
+ (?) An welchem Punkt soll sich die erste Ecke des Rechtecks befinden (Format: "X Y", Beispiel: "3 1")? 
+ >>  0 0
+
+ (?) An welchem Punkt soll sich die entgegengesetze Ecke befinden (Format: "X Y", Beispiel: "6 10")? 
+ >>  9 9
+
+ (?) Welchen Grauwert soll der Rand des Rechtecks annehmen (0 bis 255)? 
+ >>  228
+
+
+P2
+10 11
+255
+228 228 228 228 228 228 228 228 228 228 
+228 99 99 99 99 99 99 99 99 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 228 228 228 228 228 228 228 228 228 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  5
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  2 3
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  4 5
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  1
+ 
+ (!) Linien dürfen nicht diagonal gezogen werden!
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  2 3
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  7 3
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  228
+
+
+P2
+10 11
+255
+228 228 228 228 228 228 228 228 228 228 
+228 99 99 99 99 99 99 99 99 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 228 228 228 228 228 228 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 228 228 228 228 228 228 228 228 228 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  5
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  7 4
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  2 4
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  99
+
+
+P2
+10 11
+255
+228 228 228 228 228 228 228 228 228 228 
+228 99 99 99 99 99 99 99 99 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 228 228 228 228 228 228 0 228 
+228 0 99 99 99 99 99 99 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 228 228 228 228 228 228 228 228 228 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  5
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  4 4
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  4 6
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  228
+
+
+P2
+10 11
+255
+228 228 228 228 228 228 228 228 228 228 
+228 99 99 99 99 99 99 99 99 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 228 228 228 228 228 228 0 228 
+228 0 99 99 228 99 99 99 0 228 
+228 0 0 0 228 0 0 0 0 228 
+228 0 0 0 228 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 228 228 228 228 228 228 228 228 228 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  5
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  5 6
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  dsdf
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>   
+ (!) Falsches Format!
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  5 -6
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  345 3
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  43
+ 
+ (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  5 6
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  5 4
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  1337
+ 
+ (!) Der Grauwert darf maximal 255 betragen!
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  56
+543
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  24
+342
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  32
+ 
+ (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  5 6
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  5 4
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  228
+
+
+P2
+10 11
+255
+228 228 228 228 228 228 228 228 228 228 
+228 99 99 99 99 99 99 99 99 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 228 228 228 228 228 228 0 228 
+228 0 99 99 228 228 99 99 0 228 
+228 0 0 0 228 228 0 0 0 228 
+228 0 0 0 228 228 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 228 228 228 228 228 228 228 228 228 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  5
+
+ (?) Von welchem Punkt aus soll die Linie beginnen (Format: "X Y", Beispiel: "0 4")? 
+ >>  5 7
+
+ (?) An welchem Punkt soll die Linie enden (Format: "X Y", Beispiel: "6 4")? 
+ >>  4 7
+
+ (?) Welchen Grauwert soll die Linie annehmen (0 bis 255)? 
+ >>  99
+
+
+P2
+10 11
+255
+228 228 228 228 228 228 228 228 228 228 
+228 99 99 99 99 99 99 99 99 228 
+228 0 0 0 0 0 0 0 0 228 
+228 0 228 228 228 228 228 228 0 228 
+228 0 99 99 228 228 99 99 0 228 
+228 0 0 0 228 228 0 0 0 228 
+228 0 0 0 228 228 0 0 0 228 
+228 0 0 0 99 99 0 0 0 228 
+228 0 0 0 0 0 0 0 0 228 
+228 228 228 228 228 228 228 228 228 228 
+99 99 99 99 99 99 99 99 99 99 
+ 
+
+ [5] Linie zeichnen 
+ [6] Rechteck zeichnen 
+ [7] Zurück 
+ 
+ (?) Was möchten Sie tun?
+ >>  7
+ 
+
+ [1] Neue Bilddatei erzeugen 
+ [2] Bilddatei direkt bearbeiten 
+ [3] Bilddatei kopieren 
+ [4] Bilddatei entfernen 
+ [0] Beenden 
+ 
+ (?) Was möchten Sie tun?
+ >>  0
+
+
+ (:) Programm beendet. Erneut abrufbar mit "./PGM". 
+

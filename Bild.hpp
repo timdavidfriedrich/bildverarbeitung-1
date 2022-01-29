@@ -31,7 +31,7 @@ class Bild {
         unsigned char maxGrauwert = 255;
 
         void erstellen (string dateiname, int anzahlSpalten, int anzahlZeilen);
-        void laden (string dateiname);
+        bool laden (string dateiname);
         void kopieren (string originalname, string dateiname);
         void speichern (string dateiname);
         bool zeichneLinie (int vonX, int vonY, int nachX, int nachY, unsigned char grauwert);

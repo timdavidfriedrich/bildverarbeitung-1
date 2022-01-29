@@ -6,8 +6,8 @@
 
 
 void bildErstellen ();
-void bildLaden ();
-void bildKopieren ();
+bool bildLaden ();
+bool bildKopieren ();
 void bildEntfernen ();
 void bildZeichneLinie ();
 void bildZeichneRechteck ();

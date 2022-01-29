@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Bild bild; // Bild-Instanz, deren Daten manipuliert werden.
+Bild bild; // Bild-Instanz, dessen Daten manipuliert wird.
 
 
 /**
@@ -16,16 +16,33 @@ void bildErstellen () {
     int anzahlSpalten;
     int anzahlZeilen;
 
-    cout << "\n (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? \n >> ";
+    cout << "\n (?) Welcher Name soll für die Datei gewählt werden (ohne Endung)? \n >>  ";
     cin >> dateiname;
-    cout << "\n (?) Wie viele Pixel breit soll das Bild sein (max. " << Bild::maxSpalten << ")? \n >> ";
+    cout << "\n (?) Wie viele Pixel breit soll das Bild sein (max. " << Bild::maxSpalten << ")? \n >>  ";
     cin >> anzahlSpalten;
-    cout << "\n (?) Wie viele Pixel hoch soll das Bild sein? \n >> ";
+    cout << "\n (?) Wie viele Pixel hoch soll das Bild sein? \n >>  ";
     cin >> anzahlZeilen;
 
-    bild.erstellen (dateiname, anzahlSpalten, anzahlZeilen);
-    bild.speichern (dateiname);
-    cout << "\n\n" << bild;
+    if (cin) {
+        if (anzahlSpalten > 0 && anzahlZeilen > 0) {
+            if (anzahlSpalten <= Bild::maxSpalten) {
+                bild.erstellen (dateiname, anzahlSpalten, anzahlZeilen);
+                bild.speichern (dateiname);
+                cout << "\n\n" << bild;
+            } else {
+                cout << "\n (!) Das Bild darf maximal " << Bild::maxSpalten << " Pixel breit sein! \n";
+                bildErstellen ();
+            }
+        } else {
+            cout << "\n (!) Das Bild muss mindestens 1 x 1 Pixel groß sein! \n";
+            bildErstellen ();
+        }
+    } else {
+        cout << " \n\n (!) Bitte geben Sie ganze Zahlen für die Maße ein." << endl;
+        cin.clear (); string muelleimer; getline (cin, muelleimer); // cin leeren
+        bildErstellen ();
+    }
+    
 }
 
 
@@ -33,15 +50,20 @@ void bildErstellen () {
  * @brief Abfrage zum Laden eines Bilds.
  * Fragt nach Namen von originaler Datei, lädt und speichert diese, und gibt sie aus.
  */
-void bildLaden () {
+bool bildLaden () {
     string dateiname;
 
-    cout << "\n (?) Wie heißt die Datei, die bearbeitet werden soll (ohne Endung)? \n >> ";
+    cout << "\n (?) Wie heißt die Datei, die bearbeitet werden soll (ohne Endung)? \n >>  ";
     cin >> dateiname;
 
-    bild.laden (dateiname);
-    bild.speichern (dateiname);
-    cout << "\n\n" << bild;
+    if (bild.laden (dateiname)) {
+        bild.speichern (dateiname);
+        cout << "\n\n" << bild;  
+        return true;
+    } else {
+        cout << "\n (!) Die Datei \"" << dateiname << ".pgm\" existiert nicht! \n";
+        return false;
+    }
 }
 
 
@@ -50,18 +72,23 @@ void bildLaden () {
  * Fragt nach Namen von originaler Datei, lädt diese und speichert Daten in neuer Datei.
  * Gibt anschließend Bild aus.
  */
-void bildKopieren () {
+bool bildKopieren () {
     string dateiname;
     string neuerName;
 
-    cout << "\n (?) Wie heißt die Originaldatei, die kopiert werden soll (ohne Endung)? \n >> ";
+    cout << "\n (?) Wie heißt die Originaldatei, die kopiert werden soll (ohne Endung)? \n >>  ";
     cin >> dateiname;
-    cout << "\n (?) Welcher Name soll für die Kopie gewählt werden (ohne Endung)? \n >> ";
+    cout << "\n (?) Welcher Name soll für die Kopie gewählt werden (ohne Endung)? \n >>  ";
     cin >> neuerName;
 
-    bild.laden (dateiname);
-    bild.speichern (neuerName);
-    cout << "\n\n" << bild;
+    if (bild.laden (dateiname)) {
+        bild.speichern (neuerName);
+        cout << "\n\n" << bild;  
+        return true;
+    } else {
+        cout << "\n (!) Die Datei \"" << dateiname << ".pgm\" existiert nicht! \n";
+        return false;
+    }
 }
 
 
@@ -73,22 +100,18 @@ void bildKopieren () {
 void bildEntfernen () {
     string dateiname;
 
-    cout << "\n (?) Wie heißt die Datei, die gelöscht werden soll (ohne Endung)? \n >> ";
+    cout << "\n (?) Wie heißt die Datei, die gelöscht werden soll (ohne Endung)? \n >>  ";
     cin >> dateiname;
 
     try {
         if (filesystem::remove (dateiname + ".pgm")) {
             cout << "\n (:) Die Datei \"" << dateiname << ".pgm\" wurde gelöscht." << endl;
         } else {
-            cout << "\n (!) Die Datei \"" << dateiname << ".pgm\" existiert nicht!";
-            cin.clear (); // Fehler-Reset
-            string muelleimer; 
-            getline (cin, muelleimer); // Abladen in String
-            bildEntfernen (); // Erneute Abfrage
+            cout << "\n (!) Die Datei \"" << dateiname << ".pgm\" existiert nicht! \n";
         }
     }
     catch (const filesystem::filesystem_error &e) {
-        cout << "\n (!) FATALER FEHLER: " << e.what () << endl;
+        cout << "\n (!) FATALER FEHLER: " << e.what () << "\n" << endl;
     }
 }
 
@@ -105,11 +128,11 @@ void bildZeichneLinie () {
     int intGrauwert;
     unsigned char grauwert;
 
-    cout << "\n (?) Von welchem Punkt aus soll die Linie beginnen (Format: \"X Y\", Beispiel: \"0 4\")? \n >> ";
+    cout << "\n (?) Von welchem Punkt aus soll die Linie beginnen (Format: \"X Y\", Beispiel: \"0 4\")? \n >>  ";
     cin >> vonX >> vonY;
-    cout << "\n (?) An welchem Punkt soll die Linie enden (Format: \"X Y\", Beispiel: \"6 4\")? \n >> ";
+    cout << "\n (?) An welchem Punkt soll die Linie enden (Format: \"X Y\", Beispiel: \"6 4\")? \n >>  ";
     cin >> nachX >> nachY;
-    cout << "\n (?) Welchen Grauwert soll die Linie annehmen (0 bis " << (int) bild.maxGrauwert << ")? \n >> ";
+    cout << "\n (?) Welchen Grauwert soll die Linie annehmen (0 bis " << (int) bild.maxGrauwert << ")? \n >>  ";
     cin >> intGrauwert;
 
     if (cin) {
@@ -132,6 +155,7 @@ void bildZeichneLinie () {
         }
     } else {
         cout << " \n (!) Falsches Format!" << endl;
+        cin.clear (); string muelleimer; getline (cin, muelleimer); // cin leeren
         bildZeichneLinie ();
     }
 
@@ -150,11 +174,11 @@ void bildZeichneRechteck () {
     int intGrauwert;
     unsigned char grauwert;
 
-    cout << "\n (?) An welchem Punkt soll sich die erste Ecke des Rechtecks befinden (Format: \"X Y\", Beispiel: \"3 1\")? \n >> ";
+    cout << "\n (?) An welchem Punkt soll sich die erste Ecke des Rechtecks befinden (Format: \"X Y\", Beispiel: \"3 1\")? \n >>  ";
     cin >> vonX >> vonY;
-    cout << "\n (?) An welchem Punkt soll sich die entgegengesetze Ecke befinden (Format: \"X Y\", Beispiel: \"6 10\")? \n >> ";
+    cout << "\n (?) An welchem Punkt soll sich die entgegengesetze Ecke befinden (Format: \"X Y\", Beispiel: \"6 10\")? \n >>  ";
     cin >> nachX >> nachY;
-    cout << "\n (?) Welchen Grauwert soll der Rand des Rechtecks annehmen (0 bis " << (int) bild.maxGrauwert << ")? \n >> ";
+    cout << "\n (?) Welchen Grauwert soll der Rand des Rechtecks annehmen (0 bis " << (int) bild.maxGrauwert << ")? \n >>  ";
     cin >> intGrauwert;
     
     if (cin) {
@@ -173,6 +197,7 @@ void bildZeichneRechteck () {
         }
     } else {
         cout << " \n (!) Falsches Format!" << endl;
+        cin.clear (); string muelleimer; getline (cin, muelleimer); // cin leeren
         bildZeichneLinie ();
     }
 

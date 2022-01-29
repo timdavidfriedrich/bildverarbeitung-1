@@ -30,10 +30,10 @@ void menuEingabe () {
     if (cin) {
         menuAuswahl (input);
     } else {
-        cout << "\n (!) Bitte geben Sie eine ganze Zahl ein." << endl;
-        cin.clear ();
-        string muelleimer;
-        getline (cin, muelleimer);
+        cout << "\n\n (!) Bitte geben Sie eine ganze Zahl ein. \n (?) Was möchten Sie tun?" << endl;
+        cin.clear (); // Fehler-Reset
+        string muelleimer; // Temporärer String
+        getline (cin, muelleimer); // Abladen in String
         menuEingabe ();
     }
 }
@@ -43,7 +43,7 @@ void menuEingabe () {
  * @brief Verarbeitet Menü-Input.
  * Verarbeitet die eingebene Zahl und erteilt entsprechend neue Anweisungen.
  * 
- * @param input = eingebene Zahl bei menuEingabe ()
+ * @param input Eingebene Zahl bei menuEingabe ()
  * 
  * SWITCH: input
  *   Startmenü
@@ -65,13 +65,19 @@ void menuAuswahl (int input) {
             menuEingabe ();
             break;
         case 2:
-            bildLaden ();
-            menuAusgabeZeichnen ();
+            if (bildLaden ()) {
+                menuAusgabeZeichnen ();
+            } else {
+                menuAusgabeStart ();
+            }
             menuEingabe ();
             break;
         case 3:
-            bildKopieren ();
-            menuAusgabeZeichnen ();
+            if (bildKopieren ()) {
+                menuAusgabeZeichnen ();
+            } else {
+                menuAusgabeStart ();
+            }
             menuEingabe ();
             break;
         case 4:
@@ -97,7 +103,7 @@ void menuAuswahl (int input) {
             cout << "\n\n (:) Programm beendet. Erneut abrufbar mit \"./PGM\". \n\n" << endl;
             break;
         default:
-            cout << "\n (!) Diese Zahl verweist auf keinen Menüpunkt!" << endl;
+            cout << "\n (!) Diese Zahl verweist auf keinen Menüpunkt! \n (?) Was möchten Sie tun?" << endl;
             menuEingabe ();
             break;
     }

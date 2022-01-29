@@ -23,16 +23,20 @@ void Bild::erstellen (string dateiname, int anzahlSpalten, int anzahlZeilen) {
  * @brief Lädt Bild aus Datei.
  * Öffnet Datei, lädt Datei-Inhalt in Bild.
  * 
- * @param dateiname = Name der gewählten Datei (exkl. ".pgm")
+ * @param dateiname Name der gewählten Datei (exkl. ".pgm")
+ * @return true, wenn erfolgreich
+ * @return false, wenn Datei nicht gefunden
  */
-void Bild::laden (string dateiname) {
+bool Bild::laden (string dateiname) {
     ifstream datei (dateiname + ".pgm");
     if (datei.is_open ()) {
         datei >> *this;
+        datei.close ();
+        return true;
     } else {
-        cout << "\n (!) Die Datei \"" << dateiname << ".pgm\" existiert nicht!";
+        datei.close ();
+        return false;
     }
-    datei.close ();
 }
 
 
@@ -40,7 +44,7 @@ void Bild::laden (string dateiname) {
  * @brief Speichert Bild.
  * Öffnet vorhandene/neue Datei und lädt Bilddaten hinein.
  * 
- * @param dateiname = Name der gewählten Datei (exkl. ".pgm")
+ * @param dateiname Name der gewählten Datei (exkl. ".pgm")
  */
 void Bild::speichern (string dateiname) {
     Bild::name = dateiname;
