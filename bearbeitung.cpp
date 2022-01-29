@@ -105,7 +105,6 @@ void bildZeichneLinie () {
     int intGrauwert;
     unsigned char grauwert;
 
-    // TODO: if (cin)
     cout << "\n (?) Von welchem Punkt aus soll die Linie beginnen (Format: \"X Y\", Beispiel: \"0 4\")? \n >> ";
     cin >> vonX >> vonY;
     cout << "\n (?) An welchem Punkt soll die Linie enden (Format: \"X Y\", Beispiel: \"6 4\")? \n >> ";
@@ -113,23 +112,29 @@ void bildZeichneLinie () {
     cout << "\n (?) Welchen Grauwert soll die Linie annehmen (0 bis " << (int) bild.maxGrauwert << ")? \n >> ";
     cin >> intGrauwert;
 
-    if (vonX < bild.anzahlSpalten && vonY < bild.anzahlZeilen && nachX < bild.anzahlSpalten && nachY < bild.anzahlZeilen) {
-        if (intGrauwert >= 0 && intGrauwert <= (int) bild.maxGrauwert) {
-            grauwert = intGrauwert;
-            if (bild.zeichneLinie (vonX, vonY, nachX, nachY, grauwert)) {
-                cout << "\n\n" << bild;
+    if (cin) {
+        if (vonX < bild.anzahlSpalten && vonY < bild.anzahlZeilen && nachX < bild.anzahlSpalten && nachY < bild.anzahlZeilen && vonX >= 0 && vonY >= 0 && nachX >= 0 && nachY >= 0) {
+            if (intGrauwert >= 0 && intGrauwert <= (int) bild.maxGrauwert) {
+                grauwert = intGrauwert;
+                if (bild.zeichneLinie (vonX, vonY, nachX, nachY, grauwert)) {
+                    cout << "\n\n" << bild;
+                } else {
+                    cout << " \n (!) Linien dürfen nicht diagonal gezogen werden!" << endl;
+                    bildZeichneLinie ();
+                }
             } else {
-                cout << " \n (!) Linien dürfen nicht diagonal gezogen werden!" << endl;
+                cout << " \n (!) Der Grauwert darf maximal " << (int) bild.maxGrauwert << " betragen!" << endl;
                 bildZeichneLinie ();
             }
         } else {
-            cout << " \n (!) Der Grauwert darf maximal " << (int) bild.maxGrauwert << " betragen!" << endl;
+            cout << " \n (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!" << endl;
             bildZeichneLinie ();
         }
     } else {
-        cout << " \n (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!" << endl;
+        cout << " \n (!) Falsches Format!" << endl;
         bildZeichneLinie ();
     }
+
     bild.speichern (bild.name);
 }
 
@@ -145,26 +150,31 @@ void bildZeichneRechteck () {
     int intGrauwert;
     unsigned char grauwert;
 
-    // TODO: if (cin)
     cout << "\n (?) An welchem Punkt soll sich die erste Ecke des Rechtecks befinden (Format: \"X Y\", Beispiel: \"3 1\")? \n >> ";
     cin >> vonX >> vonY;
     cout << "\n (?) An welchem Punkt soll sich die entgegengesetze Ecke befinden (Format: \"X Y\", Beispiel: \"6 10\")? \n >> ";
     cin >> nachX >> nachY;
     cout << "\n (?) Welchen Grauwert soll der Rand des Rechtecks annehmen (0 bis " << (int) bild.maxGrauwert << ")? \n >> ";
     cin >> intGrauwert;
-
-    if (vonX < bild.anzahlSpalten && vonY < bild.anzahlZeilen && nachX < bild.anzahlSpalten && nachY < bild.anzahlZeilen) {
-        if (intGrauwert >= 0 && intGrauwert <= (int) bild.maxGrauwert) {
-            grauwert = intGrauwert;
-            bild.zeichneRechteck (vonX, vonY, nachX, nachY, grauwert);
-            cout << "\n\n" << bild;
+    
+    if (cin) {
+        if (vonX < bild.anzahlSpalten && vonY < bild.anzahlZeilen && nachX < bild.anzahlSpalten && nachY < bild.anzahlZeilen && vonX >= 0 && vonY >= 0 && nachX >= 0 && nachY >= 0) {
+            if (intGrauwert >= 0 && intGrauwert <= (int) bild.maxGrauwert) {
+                grauwert = intGrauwert;
+                bild.zeichneRechteck (vonX, vonY, nachX, nachY, grauwert);
+                cout << "\n\n" << bild;
+            } else {
+                cout << " \n (!) Der Grauwert darf maximal " << (int) bild.maxGrauwert << " betragen!" << endl;
+                bildZeichneRechteck ();
+            }
         } else {
-            cout << " \n (!) Der Grauwert darf maximal " << (int) bild.maxGrauwert << " betragen!" << endl;
+            cout << " \n (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!" << endl;
             bildZeichneRechteck ();
         }
     } else {
-        cout << " \n (!) Mindestens einer der Punkte befindet sich außerhalb des Bildbereichs!" << endl;
-        bildZeichneRechteck ();
+        cout << " \n (!) Falsches Format!" << endl;
+        bildZeichneLinie ();
     }
+
     bild.speichern (bild.name);
 }
