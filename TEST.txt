@@ -5,6 +5,14 @@
  Überprüfung von Korrektheit und Robustheit des Programms
  durch Eingabe gültiger und fehlerhafter Werte.
  
+ Fehlerhafte Eingaben sind z.B.:
+ - falsche Datentypen
+ - zu große/kleine Werte
+ - zu wenige Werte
+ - diagonale Linien
+ - nicht existente Dateien
+ - fehlerhafte Dateien (kein P2)
+ 
  ">>"-Symbole kündigen Benutzereingaben an.
  
 ###########################################################
