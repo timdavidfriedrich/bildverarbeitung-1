@@ -6,13 +6,6 @@ using namespace std;
 Bild bild; // Bild-Instanz, dessen Daten manipuliert wird.
 
 
-/**
- * @brief Abfrage zur Bilderstellung.
- * Fragt nach Dateiname und Bildmaße, mit denen Bild erstellt werden soll.
- * Speichert erstelltes Bild anschließend und gibt es aus.
- * 
- * NICHT EXPLIZIT GEFORDERT
- */
 void bildErstellen () {
     string dateiname;
     int anzahlSpalten;
@@ -48,12 +41,6 @@ void bildErstellen () {
 }
 
 
-/**
- * @brief Abfrage zum Laden eines Bilds.
- * Fragt nach Namen von originaler Datei, lädt und speichert diese, und gibt sie aus.
- * 
- * NICHT EXPLIZIT GEFORDERT
- */
 bool bildLaden () {
     string dateiname;
 
@@ -71,13 +58,6 @@ bool bildLaden () {
 }
 
 
-/**
- * @brief Abfrage zum Kopieren eines Bilds.
- * Fragt nach Namen von originaler Datei, lädt diese und speichert Daten in neuer Datei.
- * Gibt anschließend Bild aus.
- * 
- * NICHT EXPLIZIT GEFORDERT
- */
 bool bildKopieren () {
     string dateiname;
     string neuerName;
@@ -98,13 +78,6 @@ bool bildKopieren () {
 }
 
 
-/**
- * @brief Entfernt Bilddatei.
- * Versucht Datei mit bestimmten Namen zu löschen. Wenn nicht vorhanden, Fehler.
- * Danach Zurücksetzung des Fehlerstatuses und Entleerung der Eingabe.
- * 
- * NICHT EXPLIZIT GEFORDERT
- */
 void bildEntfernen () {
     string dateiname;
 
@@ -124,15 +97,6 @@ void bildEntfernen () {
 }
 
 
-/**
- * @brief Abfrage zur Linienzeichnung.
- * Fragt nach Linien-Koordinaten und Linien-Grauwert.
- * Wenn Koordinaten im Bild und Grauwert gültig, dann Zeichnung.
- * Ist Zeichnung fehlgeschlagen (weil z.B. diagonal), dann erneute Abfrage.
- * Gibt anschließend geändertes Bild aus und speichert in Datei.
- * 
- * NICHT EXPLIZIT GEFORDERT
- */
 void bildZeichneLinie () {
     int vonX, vonY, nachX, nachY;
     int intGrauwert;
@@ -173,14 +137,6 @@ void bildZeichneLinie () {
 }
 
 
-/**
- * @brief Abfrage zur Rechteckzeichnung.
- * Fragt nach Rechteck-Koordinaten und Rechteck-Grauwert.
- * Wenn Koordinaten im Bild und Grauwert gültig, dann Zeichnung.
- * Gibt anschließend geändertes Bild aus und speichert in Datei.
- * 
- * NICHT EXPLIZIT GEFORDERT
- */
 void bildZeichneRechteck () {
     int vonX, vonY, nachX, nachY;
     int intGrauwert;
