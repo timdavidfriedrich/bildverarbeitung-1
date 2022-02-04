@@ -2,7 +2,8 @@
 #include "Bild.hpp"
 
 
-Bild bild; // Bild-Instanz, dessen Daten manipuliert wird.
+// Bild-Instanz, dessen Daten manipuliert wird.
+Bild bild;
 
 
 void bildErstellen () {

@@ -33,8 +33,8 @@ void menuEingabe ();
  *   CASE: [4] Löscht Datei mit gegebenen Namen.
  *   CASE: [0] Beendet Programm.
  *   Zeichnen-Menü
- *   CASE: [5] Startet zeichneLinie () und kehrt zum Zeichnen-Menü zurück.
- *   CASE: [6] Startet zeichneRechteck () und kehrt zum Zeichnen-Menü zurück.
+ *   CASE: [5] Startet @see zeichneLinie () und kehrt zum Zeichnen-Menü zurück.
+ *   CASE: [6] Startet @see zeichneRechteck () und kehrt zum Zeichnen-Menü zurück.
  *   CASE: [7] Speichert offene Datei ab und kehrt zum Startmenü zurück. 
  */
 void menuAuswahl (int input);
@@ -42,12 +42,16 @@ void menuAuswahl (int input);
 /**
  * @brief Gibt Startmenü aus.
  * Gibt Menü aus mit Optionen, um Bild auszuwählen.
+ * 
+ * @see menuAusgabeZeichnen ()
  */
 void menuAusgabeStart ();
 
 /**
  * @brief Gibt Zeichnen-Menü aus.
  * Gibt Menü aus mit Optionen, um auf Bild zu zeichnen.
+ * 
+ * @see menuAusgabeStart ()
  */
 void menuAusgabeZeichnen ();
 

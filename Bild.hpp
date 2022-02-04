@@ -9,27 +9,33 @@
 
 /**
  * @brief Bild-Klasse
- * Regelt Datei-Management, Bildverarbeitung und -bearbeitung.
+ * Regelt Datei-Management (erstellen, speichern, löschen etc.),
+ * Bildverarbeitung (in Matrix laden etc.) und 
+ * Bildbearbeitung (Linien und Rechtecke zeichnen).
  * 
- * @param anzahlZeilen Bildhöhe (zum Rechnen benötigt)
- * @param anzahlSpalten Bildbreite (zum Rechnen benötigt)
- * @param matrix Eigentliches Bild mit Grauwerten
- * @param name Dateiname, der u.a. zum Speichern verwendet wird
- * @param maxSpalten Maximale Bildbreite (Empfehlung .pgm-Dokumentation)
- * @param maxGrauwert Max. Grauwert einzelner Pixel bzw. max. unsigned-char-Kapazität
- * 
- * EXPLIZIT GEFORDERT (zumindest Klasse mit Matrix, Operatoren und Zeichnen-Funktionen)
+ * EXPLIZIT GEFORDERT 
  */
 class Bild {
 
     private:
+
+        /* Eigentliches Bild mit Grauwerten in 2x2 Feld */
         std::vector <std::vector <unsigned char>> matrix;
 
     public:
+
+        /* Dateiname, der u.a. zum Speichern verwendet wird */
         std::string name = "Neues Bild";
+
+        /* Bildhöhe und Bildbreite (zum Rechnen benötigt) */
         int anzahlZeilen, anzahlSpalten = 0;
-        const static int maxSpalten = 70; // .pgm-Standard
+
+        /* Maximale Bildbreite (Empfehlung .pgm-Dokumentation) */
+        const static int maxSpalten = 70;
+
+        /* Max. Grauwert einzelner Pixel bzw. max. unsigned-char-Kapazität */
         unsigned char maxGrauwert = 255;
+
 
         /**
          * @brief Erstellt neues Bild.
@@ -41,6 +47,7 @@ class Bild {
          * @param anzahlZeilen Höhe des Bukdes bzw. Anzahl Zeilen-Vektoren in Matrix-Vektor
          */
         void erstellen (std::string dateiname, int anzahlSpalten, int anzahlZeilen);
+
 
         /**
          * @brief Lädt Bild aus Datei.
@@ -54,6 +61,7 @@ class Bild {
          */
         bool laden (std::string dateiname);
 
+
         /**
          * @brief Speichert Bild.
          * Öffnet vorhandene/neue Datei und lädt Bilddaten hinein.
@@ -63,6 +71,7 @@ class Bild {
          * IMPLIZIT GEFORDERT
          */        
         void speichern (std::string dateiname);
+
 
         /**
          * @brief Zeichnet Linie in Bild.
@@ -79,10 +88,12 @@ class Bild {
          * @param grauwert Grauwert, den Linie annehmen soll
          * @return true, wenn Zeichnung möglich (X oder Y gleich)
          * @return false, wenn diagonal
+         * @see zeichneRechteck ()
          * 
          * EXPLIZIT GEFORDERT
          */
         bool zeichneLinie (int vonX, int vonY, int nachX, int nachY, unsigned char grauwert);
+
 
         /**
          * @brief Zeichnet Rechteck-Rand in Bild.
@@ -96,10 +107,13 @@ class Bild {
          * @param nachX X-Koordinate der gegenüberliegenden Ecke
          * @param nachY Y-Koordinate der gegenüberliegenden Ecke
          * @param grauwert Grauwert, den Rechteck-Rand annehmen soll
+         * @see zeichneLinie ()
          * 
          * EXPLIZIT GEFORDERT (abgesehen von "unsigned char grauwert")
          */
         void zeichneRechteck (int vonX, int vonY, int nachX, int nachY, unsigned char grauwert);
+
+
         /**
          * @brief Operator zum Laden.
          * Leert aktuelle Matrix, liest Zeilen aus Stream und pusht Zeilen-Vektoren mit Werten in Matrix.
@@ -113,6 +127,7 @@ class Bild {
          * EXPLIZIT GEFORDERT
          */
         friend std::ifstream &operator >> (std::ifstream &stream, Bild &bild);
+
 
         /**
          * @brief Operator zum Speichern.

@@ -84,6 +84,7 @@ std::ifstream &operator >> (std::ifstream &stream, Bild &bild) {
     int zeilennummer = 0;
     for (std::string streamZeile; getline (stream, streamZeile);) {
         if (streamZeile.find ("#") == std::string::npos) {
+            // Einzelne Zeile zu Stream, damit unterteilbar
             std::stringstream ss (streamZeile);
             int zahl;
             std::string typ;
@@ -91,6 +92,7 @@ std::ifstream &operator >> (std::ifstream &stream, Bild &bild) {
             if (zeilennummer == 0) {
                 while (ss >> typ) if (typ != "P2") bildFehlerhaft();
             } else if (zeilennummer == 1) {
+                // Speicherung anzahlZeilen, anzahlSpalten
                 std::vector <int> abmessungen;
                 while (ss >> zahl) abmessungen.push_back (zahl);
                 bild.anzahlZeilen = abmessungen [1];
@@ -98,6 +100,7 @@ std::ifstream &operator >> (std::ifstream &stream, Bild &bild) {
             } else if (zeilennummer == 2) {
                 while (ss >> zahl) bild.maxGrauwert = zahl;
             } else {
+                // Speicherung Pixel in Matrix
                 std::vector <unsigned char> zeile;
                 while (ss >> zahl) zeile.push_back (zahl);
                 bild.matrix.push_back (zeile);
