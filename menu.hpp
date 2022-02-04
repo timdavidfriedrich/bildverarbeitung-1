@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 /**
  * @brief Startet Menü-Abfolge.
  * Gibt den Programmtitel aus, ruft Startmenü zum ersten Mal auf und fragt nach erster Eingabe.

@@ -1,12 +1,11 @@
 #include "menu.hpp"
 #include "bearbeitung.hpp"
-using namespace std;
 
 
 void menu () {
-    cout << " \n\n"
+    std::cout << " \n\n"
             << " -- PGM-BILDVERARBEITUNG -- "
-            << endl;
+            << std::endl;
     menuAusgabeStart ();
     menuEingabe ();
 }
@@ -14,15 +13,15 @@ void menu () {
 
 void menuEingabe () {
     int input;
-    cout << " >>  ";
-    cin >> input;
-    if (cin) {
+    std::cout << " >>  ";
+    std::cin >> input;
+    if (std::cin) {
         menuAuswahl (input);
     } else {
-        cout << "\n\n (!) Bitte geben Sie eine ganze Zahl ein. \n (?) Was möchten Sie tun?" << endl;
-        cin.clear (); // Fehler-Reset
-        string muelleimer; // Temporärer String
-        getline (cin, muelleimer); // Abladen in String
+        std::cout << "\n\n (!) Bitte geben Sie eine ganze Zahl ein. \n (?) Was möchten Sie tun?" << std::endl;
+        std::cin.clear (); // Fehler-Reset
+        std::string muelleimer; // Temporärer String
+        getline (std::cin, muelleimer); // Abladen in String
         menuEingabe ();
     }
 }
@@ -71,10 +70,10 @@ void menuAuswahl (int input) {
             menuEingabe ();
             break;
         case 0:
-            cout << "\n\n (:) Programm beendet. Erneut abrufbar mit \"./PGM\". \n\n" << endl;
+            std::cout << "\n\n (:) Programm beendet. Erneut abrufbar mit \"./PGM\". \n\n" << std::endl;
             break;
         default:
-            cout << "\n (!) Diese Zahl verweist auf keinen Menüpunkt! \n (?) Was möchten Sie tun?" << endl;
+            std::cout << "\n (!) Diese Zahl verweist auf keinen Menüpunkt! \n (?) Was möchten Sie tun?" << std::endl;
             menuEingabe ();
             break;
     }
@@ -82,7 +81,7 @@ void menuAuswahl (int input) {
 
 
 void menuAusgabeStart () {
-    cout << " \n\n"
+    std::cout << " \n\n"
          << " [1] Neue Bilddatei erzeugen \n"
          << " [2] Bilddatei direkt bearbeiten \n"
          << " [3] Bilddatei kopieren \n"
@@ -90,16 +89,16 @@ void menuAusgabeStart () {
          << " [0] Beenden \n"
          << " \n"
          << " (?) Was möchten Sie tun?"
-         << endl;
+         << std::endl;
 }
 
 
 void menuAusgabeZeichnen () {
-    cout << " \n\n"
+    std::cout << " \n\n"
          << " [5] Linie zeichnen \n"
          << " [6] Rechteck zeichnen \n"
          << " [7] Zurück \n"
          << " \n"
          << " (?) Was möchten Sie tun?"
-         << endl;
+         << std::endl;
 }

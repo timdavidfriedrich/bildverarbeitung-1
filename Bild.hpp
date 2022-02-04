@@ -5,7 +5,6 @@
 #include <iomanip>
 #include <fstream>
 #include <vector>
-using namespace std;
 
 
 /**
@@ -24,10 +23,10 @@ using namespace std;
 class Bild {
 
     private:
-        vector <vector <unsigned char>> matrix;
+        std::vector <std::vector <unsigned char>> matrix;
 
     public:
-        string name = "Neues Bild";
+        std::string name = "Neues Bild";
         int anzahlZeilen, anzahlSpalten = 0;
         const static int maxSpalten = 70; // .pgm-Standard
         unsigned char maxGrauwert = 255;
@@ -41,7 +40,7 @@ class Bild {
          * @param anzahlSpalten Breite des Bildes bzw. Anzahl unsigned chars in Zeilen-Vektoren
          * @param anzahlZeilen Höhe des Bukdes bzw. Anzahl Zeilen-Vektoren in Matrix-Vektor
          */
-        void erstellen (string dateiname, int anzahlSpalten, int anzahlZeilen);
+        void erstellen (std::string dateiname, int anzahlSpalten, int anzahlZeilen);
 
         /**
          * @brief Lädt Bild aus Datei.
@@ -53,7 +52,7 @@ class Bild {
          * 
          * IMPLIZIT GEFORDERT
          */
-        bool laden (string dateiname);
+        bool laden (std::string dateiname);
 
         /**
          * @brief Speichert Bild.
@@ -63,7 +62,7 @@ class Bild {
          * 
          * IMPLIZIT GEFORDERT
          */        
-        void speichern (string dateiname);
+        void speichern (std::string dateiname);
 
         /**
          * @brief Zeichnet Linie in Bild.
@@ -113,7 +112,7 @@ class Bild {
          * 
          * EXPLIZIT GEFORDERT
          */
-        friend ifstream &operator >> (ifstream &stream, Bild &bild);
+        friend std::ifstream &operator >> (std::ifstream &stream, Bild &bild);
 
         /**
          * @brief Operator zum Speichern.
@@ -126,7 +125,7 @@ class Bild {
          * 
          * EXPLIZIT GEFORDERT
          */
-        friend ostream &operator << (ostream &stream, const Bild &bild);
+        friend std::ostream &operator << (std::ostream &stream, const Bild &bild);
 
 };
 

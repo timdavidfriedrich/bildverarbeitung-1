@@ -49,5 +49,12 @@ void bildZeichneLinie ();
  */
 void bildZeichneRechteck ();
 
+/**
+ * @brief Meldung Fehlerhaftes Bild
+ * Gibt Fehlermeldung aus, wenn kein PGM.
+ * @pre Erste Zeile von Datei kein "P2"
+ */
+void bildFehlerhaft ();
+
 
 #endif
