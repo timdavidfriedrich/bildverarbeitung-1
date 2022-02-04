@@ -2,7 +2,7 @@
 #include "Bild.hpp"
 
 
-// Bild-Instanz, dessen Daten manipuliert wird.
+// Bild-Instanz, die überall bearbeitet wird.
 Bild bild;
 
 
